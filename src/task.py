@@ -7,11 +7,10 @@ manager could act on directly:
   1. severity: one of {"Kritisch", "Hoch", "Niedrig"}
   2. summary: a single, plain-German sentence describing the issue
 
-This mirrors the 1&1 posting's own wording directly: "Aufbau
-KI-gestützter Workflows zur Bearbeitung und Auswertung von Prüf- und
-Projektinformationen" (an LLM turning a raw checker-output row into an
-actionable classification + summary) and "Unterstützung bei der
-Analyse, Aufbereitung und Auswertung von Reports und Kennzahlen."
+The task is an AI-supported workflow for processing and evaluating
+check and project information: an LLM turning a raw checker-output row
+into an actionable classification + summary, in support of analyzing and
+reporting on rollout figures.
 
 Ground-truth severity rules (used only to build the golden evaluation
 set and to grade a mock model's output -- NOT given to the model as

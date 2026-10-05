@@ -1,21 +1,13 @@
 """
 A deterministic mock LLM standing in for a real model call.
 
-Disclosure, stated as directly as possible: this is NOT a real language
-model. No live LLM (Ollama, a hosted API, or otherwise) is reachable
-from this sandbox -- checked directly, not assumed (see the project
-README for exactly what was tried and what failed). Building a prompt-
-engineering project that requires live model calls to demonstrate
-anything meaningful, without a reachable model, leaves two honest
-options: don't build it at all, or build the real, reusable measurement
-methodology (prompt versions, a golden evaluation set, a scoring
-harness) against a *disclosed stand-in* for the model response, so the
-methodology itself is genuinely exercised and tested even though no
-live model graded it. This project takes the second option, the same
-way the Kubernetes manifests in devops-cicd-monitoring were schema-
-validated rather than cluster-applied.
+This is a rule-based stand-in for a language model, not a real model.
+The project's value is the reusable measurement methodology (prompt
+versions, a golden evaluation set, a scoring harness), which is fully
+exercised and tested against this stand-in; a real model client can
+replace it without changing the harness.
 
-To make this an honest test of PROMPT QUALITY rather than a rigged
+To make this a genuine test of PROMPT QUALITY rather than a rigged
 puzzle, the mock model is built to behave the way an actual small
 instruction-following model plausibly would: it doesn't have access to
 the ground-truth severity rules in task.py. Instead, it has its own
